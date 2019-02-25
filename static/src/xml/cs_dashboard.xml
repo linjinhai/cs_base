@@ -7,7 +7,7 @@
                     <h5>欢迎使用！</h5>
                 </div>
                 <div class="col-sm-6">
-                    <a href="#" class="btn btn-sm btn-default pull-right refresh-act"><i class="fa fa-refresh"></i> 刷新</a>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-default pull-right refresh-act"><i class="fa fa-refresh"></i> 刷新</a>
                 </div>
             </div>
             <div class="row o_cs_base_dashboard_agent">
@@ -34,6 +34,7 @@
                     <div class="">
                         <div>
                             <b>所在客服组</b>：<t t-esc="widget.data.groups"></t>
+                            <span class="pull-right"><b>坐席状态</b>：<a href="javascript:void(0)" t-attf-class="btn btn-sm #{widget.data.status_class} status-change-act" title="点击切换状态"><t t-esc="widget.data.status"></t></a></span>
                         </div>
                     </div>
                 </div>
