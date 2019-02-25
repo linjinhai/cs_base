@@ -12,6 +12,7 @@
             <field name="user_id"/>
             <field name="group_ids" widget="many2many_tags"/>
             <field name="remark"/>
+            <field name="status"/>
 
 </tree>
             </field>
