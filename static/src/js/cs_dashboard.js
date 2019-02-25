@@ -67,9 +67,9 @@ var Dashboard = AbstractAction.extend({
 
 var DashboardAgent = Widget.extend({
     template: 'DashboardAgent',
-    // events: {
-    //     'click .o_pay_subscription': 'on_pay_subscription',
-    // },
+    events: {
+        'click .status-change-act': 'on_status_change',
+    },
 
     init: function(parent, data){
         this.data = data;
@@ -77,9 +77,15 @@ var DashboardAgent = Widget.extend({
         return this._super.apply(this, arguments);
     },
 
-    // on_pay_subscription: function(){
-
-    // },
+    on_status_change: function(e){
+        var self = this;
+        var $a = $(e.currentTarget);
+        session.rpc("/cs_base_dashboard/status_change", {}).then(function (data) {
+            if(data.res_status){
+                setTimeout(self.parent.on_refresh, 500);
+            }
+        });
+    },
 });
 
 core.action_registry.add('cs_base_dashboard', Dashboard);
