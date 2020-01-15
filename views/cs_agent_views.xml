@@ -28,6 +28,7 @@
             <field name="no"/>
             <field name="user_id"/>
             <field name="group_ids" widget="many2many_tags"/>
+            <field name="status"/>
             <field name="remark"/>
 
     </group>
