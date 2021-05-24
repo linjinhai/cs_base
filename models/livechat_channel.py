@@ -45,6 +45,7 @@ class LivechatChannel(models.Model):
         # create the session, and add the link with the given channel
         mail_channel = self.env["mail.channel"].with_context(mail_create_nosubscribe=False).sudo().create({
             'channel_partner_ids': channel_partner_to_add,
+            'livechat_operator_id': operator_partner_id,
             'livechat_channel_id': livechat_channel_id,
             'anonymous_name': anonymous_name,
             'channel_type': 'livechat',
