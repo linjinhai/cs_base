@@ -7,7 +7,7 @@
             <field name="model">cs.group</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
-                <tree string="客服组">
+                <tree string="客服团队">
             <field name="name"/>
             <field name="state"/>
             <field name="agent_ids" widget="many2many_tags"/>
@@ -19,7 +19,7 @@
             <field name="model">cs.group</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="客服组" version="7.0">
+                <form string="客服团队" version="7.0">
   <sheet>
     <group>
             <field name="name"/>
@@ -31,13 +31,13 @@
             </field>
         </record>
         <record id="cs_group_action_117" model="ir.actions.act_window">
-            <field name="name">客服组</field>
+            <field name="name">客服团队</field>
             <field name="res_model">cs.group</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
         </record>
-        <menuitem action="cs_group_action_117" id="cs_group_menuitem_90" name="客服组" parent="cs_config_menu" sequence="10"/>
+        <menuitem action="cs_group_action_117" id="cs_group_menuitem_90" name="客服团队" parent="cs_config_menu" sequence="10"/>
 
     </data>
 </openerp>
