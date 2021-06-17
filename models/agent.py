@@ -5,7 +5,7 @@ from odoo import models, fields, api
 
 class CsCroup(models.Model):
     _name = 'cs.group'
-    _description = u'客服组'
+    _description = u'客服团队'
     _rec_name = 'name'
 
     name = fields.Char(string='名称', required=True)
