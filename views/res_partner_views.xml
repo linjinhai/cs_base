@@ -42,14 +42,12 @@
                     <div class="oe_title">
                         <field name="is_company" invisible="1"/>
                         <field name="commercial_partner_id" invisible="1"/>
-                        <field name="customer" invisible="1"/>
-                        <field name="supplier" invisible="1"/>
                         <field name="type" invisible="1"/>
                         <h1>
                             <field name="name" default_focus="1" placeholder="姓名" attrs="{'required' : [('type', '=', 'contact')]}"/>
                         </h1>
                         <div class="o_row">
-                            <field name="parent_id" placeholder="公司" domain="[('is_company', '=', True)]" context="{'default_is_company': True, 'default_supplier': supplier, 'default_customer': customer}" attrs="{'invisible': ['|', '&amp;', ('is_company','=', True),('parent_id', '=', False),('company_name', '!=', False),('company_name', '!=', '')]}"/>
+                            <field name="parent_id" placeholder="公司" domain="[('is_company', '=', True)]" context="{'default_is_company': True}" attrs="{'invisible': ['|', '&amp;', ('is_company','=', True),('parent_id', '=', False),('company_name', '!=', False),('company_name', '!=', '')]}"/>
                                 <field name="company_name" attrs="{'invisible': ['|', '|', ('company_name', '=', False), ('company_name', '=', ''), ('is_company', '=', True)]}"/>
                                 <button name="create_company" type="object" string="Create company" class="btn btn-sm oe_edit_only fa fa-external-link btn btn-link " attrs="{'invisible': ['|', '|', ('is_company','=', True), ('company_name', '=', ''), ('company_name', '=', False)]}"/>
                         </div>
@@ -106,7 +104,7 @@
             <field name="target">current</field>
             <field name="search_view_id" ref="cs_base.view_crm_partner_filter"/>
             <field name="context">{"search_default_filter_my_partners":1}</field>
-            <field name="domain">[('customer','=',1),'|',('user_id','=',uid),('user_id','=',False)]</field>
+            <field name="domain">['|',('user_id','=',uid),('user_id','=',False)]</field>
             <field name="view_ids"
                    eval="[(5, 0, 0),
                           (0, 0, {'view_mode': 'tree', 'view_id': ref('crm_partner_view_tree')}),
